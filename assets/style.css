@@ -107,8 +107,8 @@ nav ul a:hover{color:var(--amber);text-decoration:none}
 .hero-photo img{
   max-width:100%;max-height:94%;width:auto;height:auto;object-fit:contain;
   filter:grayscale(1) contrast(1.05);
-  -webkit-mask-image:radial-gradient(ellipse 92% 92% at center, #000 55%, transparent 99%);
-          mask-image:radial-gradient(ellipse 92% 92% at center, #000 55%, transparent 99%);
+  -webkit-mask-image:radial-gradient(ellipse 130% 125% at center, #000 68%, transparent 99%);
+          mask-image:radial-gradient(ellipse 130% 125% at center, #000 68%, transparent 99%);
 }
 @media(max-width:820px){
   .hero{grid-template-columns:minmax(0,1fr);min-height:0}
