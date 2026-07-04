@@ -80,7 +80,7 @@ nav ul a:hover{color:var(--amber);text-decoration:none}
   min-height:80vh;align-items:center;
   border-bottom:1px solid var(--hairline);
 }
-.hero-copy{padding:72px 24px 72px max(24px,calc((100vw - 1080px)/2))}
+.hero-copy{padding:72px 24px 72px max(24px,calc((100vw - 1080px)/2));container-type:inline-size}
 .eyebrow{
   font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.22em;
   text-transform:uppercase;color:var(--teal);margin-bottom:22px;
@@ -88,7 +88,7 @@ nav ul a:hover{color:var(--amber);text-decoration:none}
 .hero h1{
   font-family:'Big Shoulders Display',sans-serif;font-weight:900;
   text-transform:uppercase;line-height:.88;
-  font-size:clamp(2.9rem,12.5vw,9.2rem);
+  font-size:clamp(2.6rem,13.2cqw,9.2rem);
   letter-spacing:.01em;
 }
 .hero h1 .l2{display:block;color:var(--amber)}
