@@ -262,6 +262,106 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 .foot-note{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.14em;
   text-transform:uppercase;color:var(--paper-dim)}
 
+/* =================== DESIGN REFINEMENT PASS =================== */
+
+/* --- body copy: bigger, airier, warmer --- */
+body{font-size:1.0625rem;line-height:1.75}
+.liner p{font-size:1.12rem;line-height:1.8;max-width:60ch}
+.ahr-copy p{font-size:1.08rem;line-height:1.78}
+p a, .liner a, .ahr-copy a{
+  color:var(--amber);text-decoration:underline;text-decoration-color:rgba(226,161,60,.4);
+  text-underline-offset:3px;text-decoration-thickness:1px;transition:text-decoration-color .2s;
+}
+p a:hover{text-decoration-color:var(--amber)}
+
+/* --- nav: animated underline instead of bare color swap --- */
+nav ul a{position:relative;transition:color .2s}
+nav ul a::after{
+  content:"";position:absolute;left:0;right:100%;bottom:2px;height:2px;
+  background:var(--amber);transition:right .25s ease;
+}
+nav ul a:hover{color:var(--paper)}
+nav ul a:hover::after{right:0}
+
+/* --- chips: from clunky squares to warm pills --- */
+.chip{
+  border-radius:999px;padding:13px 26px;border:1px solid rgba(239,230,214,.22);
+  background:transparent;
+  transition:background .25s,color .25s,border-color .25s,transform .2s,box-shadow .25s;
+}
+.chip::after{content:"97";margin-left:9px;opacity:.45;font-size:.85em;transition:opacity .2s}
+.chip:hover{
+  background:var(--amber);border-color:var(--amber);color:#16110d;
+  transform:translateY(-2px);box-shadow:0 8px 22px rgba(226,161,60,.18);text-decoration:none;
+}
+.chip:hover::after{opacity:1}
+.chip:active{transform:translateY(0)}
+
+/* --- pull quote: give it a voice --- */
+.pull{position:relative;border-left:none;padding:10px 0 10px 54px;font-size:1.3rem}
+.pull::before{
+  content:"C";position:absolute;left:0;top:-6px;
+  font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:4.6rem;
+  color:var(--amber);line-height:1;
+}
+
+/* --- section eyebrow: tick mark --- */
+.sec-head .cat{display:flex;align-items:center;gap:10px}
+.sec-head .cat::before{content:"";width:22px;height:1px;background:var(--rust)}
+
+/* --- photo sheets: lift + caption glide --- */
+.sheet{gap:16px;padding:16px;border-radius:8px}
+.sheet figure{border-radius:4px}
+.sheet figure::after{
+  content:"";position:absolute;inset:0;border:1px solid rgba(239,230,214,0);
+  border-radius:4px;transition:border-color .3s;pointer-events:none;
+}
+.sheet figure:hover::after{border-color:rgba(226,161,60,.5)}
+.sheet figcaption{transform:translateY(6px);transition:opacity .3s,transform .3s}
+.sheet figure:hover figcaption{transform:translateY(0)}
+.sessions figure{border-radius:4px;overflow:hidden}
+
+/* --- record sleeves: hover lift --- */
+.sleeve{border-radius:3px;transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s}
+.record:hover .sleeve{transform:translateY(-6px);box-shadow:0 26px 48px rgba(0,0,0,.6)}
+.rec-meta .rt{transition:color .2s}
+.record:hover .rt{color:var(--amber)}
+
+/* --- roster rows: slide on hover --- */
+.roster li{transition:padding-left .25s,background .25s;border-radius:3px}
+.roster li:hover{padding-left:14px;background:rgba(226,161,60,.05)}
+
+/* --- release blocks --- */
+.release-block img{border-radius:4px}
+.release-block h3{transition:color .2s}
+.release-block:hover h3{color:var(--amber)}
+
+/* --- press logos --- */
+.press-logos{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:26px}
+.plogo{
+  display:flex;flex-direction:column;justify-content:center;gap:16px;
+  border:1px solid var(--hairline);border-radius:8px;padding:40px 36px;min-height:170px;
+  background:linear-gradient(160deg,rgba(239,230,214,.03),transparent 60%);
+  transition:border-color .25s,transform .2s,box-shadow .25s;text-decoration:none;
+}
+a.plogo:hover{border-color:var(--amber);transform:translateY(-3px);box-shadow:0 14px 34px rgba(0,0,0,.35);text-decoration:none}
+.plogo-mark{display:block;color:var(--paper);line-height:1.08}
+.plogo-adg{font-family:'Spectral',Georgia,serif;font-weight:600;font-size:1.7rem;letter-spacing:.01em}
+.plogo-pat{font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:2.1rem;letter-spacing:-.03em;text-transform:lowercase}
+.plogo-cap{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--paper-dim);line-height:1.9}
+.plogo-soon{opacity:.75}
+.soon-tag{
+  display:inline-block;margin-left:8px;padding:3px 10px;border:1px solid var(--amber);border-radius:999px;
+  color:var(--amber);font-size:.6rem;letter-spacing:.14em;vertical-align:middle;
+}
+
+/* --- footer: quiet but finished --- */
+footer{border-top:1px solid var(--hairline);background:var(--panel)}
+footer .wrap{padding-top:8px;padding-bottom:8px}
+
+/* --- hero role line rhythm --- */
+.hero-roles{font-size:1.12rem;line-height:1.75}
+
 /* ===== audit fixes ===== */
 /* rhythm: first section after a page header shouldn't double-stack padding */
 .page-head + section{padding-top:56px}
