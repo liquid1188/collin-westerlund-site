@@ -43,6 +43,15 @@
 <section style="border-bottom:none">
   <div class="wrap">
 
+    <div id="nb-gate" class="nb-gate">
+      <label class="nb-gate-field">
+        <span class="nb-gate-label">Collin&rsquo;s entrance</span>
+        <input id="nb-pass" class="nb-pass" type="password" placeholder="&middot; &middot; &middot; &middot; &middot;" aria-label="Notebook passcode" autocomplete="off">
+        <button id="nb-unlock" class="nb-enter" aria-label="Unlock">&rarr;</button>
+      </label>
+      <span id="nb-gate-msg" class="nb-gate-msg" role="status"></span>
+    </div>
+
     <div id="nb-composer" class="nb-composer" style="display:none">
       <div class="nb-composer-head">
         <span class="cat">New Note</span>
@@ -61,15 +70,6 @@
 
     <div id="nb-entries" class="entries" data-editing="0">
       <!-- notes render here via assets/notebook.js -->
-    </div>
-
-    <div id="nb-gate" class="nb-gate">
-      <label class="nb-gate-field">
-        <span class="nb-gate-label">Collin&rsquo;s entrance</span>
-        <input id="nb-pass" class="nb-pass" type="password" placeholder="&middot; &middot; &middot; &middot; &middot;" aria-label="Notebook passcode" autocomplete="off">
-        <button id="nb-unlock" class="nb-enter" aria-label="Unlock">&rarr;</button>
-      </label>
-      <span id="nb-gate-msg" class="nb-gate-msg" role="status"></span>
     </div>
 
   </div>
