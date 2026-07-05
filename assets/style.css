@@ -250,9 +250,9 @@ section{padding:96px 0;border-bottom:1px solid var(--hairline);scroll-margin-top
 /* ===== listen / footer ===== */
 .listen{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px}
 .chip{
-  font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--paper);border:1px solid var(--hairline);padding:13px 22px;
-  transition:border-color .2s,color .2s,background .2s;
+  font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;
+  color:var(--paper);border:1.5px solid rgba(222,216,205,.32);padding:15px 26px;
+  transition:border-color .2s,color .2s,background .2s,transform .2s,box-shadow .2s;
 }
 .chip:hover{border-color:var(--amber);color:var(--amber);text-decoration:none;background:rgba(226,161,60,.06)}
 footer{padding:56px 0 64px}
@@ -457,3 +457,35 @@ nav ul a.active::after{content:"";display:block;height:2px;background:var(--ambe
 .wk-card p{color:var(--paper-dim);font-size:.98rem;flex:1}
 .wk-note{margin-top:44px;color:var(--paper-dim);font-style:italic;max-width:62ch}
 @media(max-width:840px){.wk-grid{grid-template-columns:1fr}}
+
+/* ===== primary CTA button ===== */
+.btn-cta{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:'Big Shoulders Display',sans-serif;font-weight:700;text-transform:uppercase;
+  font-size:1.15rem;letter-spacing:.05em;
+  color:#141414;background:var(--amber);border:2px solid var(--amber);border-radius:999px;
+  padding:18px 40px;text-decoration:none;white-space:nowrap;
+  box-shadow:0 10px 30px rgba(186,116,64,.28);
+  transition:transform .2s,box-shadow .25s,background .2s;
+}
+.btn-cta:hover{
+  background:#c9884f;border-color:#c9884f;text-decoration:none;color:#141414;
+  transform:translateY(-3px);box-shadow:0 16px 40px rgba(186,116,64,.42);
+}
+.btn-cta:active{transform:translateY(-1px)}
+.btn-cta .btn-arrow{transition:transform .25s}
+.btn-cta:hover .btn-arrow{transform:translateX(5px)}
+
+/* ===== home CTA band ===== */
+.cta-band{padding:80px 0}
+.cta-inner{
+  display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;
+  background:var(--panel);border:1px solid var(--hairline);border-radius:10px;
+  padding:48px 52px;
+}
+.cta-h{
+  font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;
+  font-size:clamp(2rem,4.5vw,3.2rem);letter-spacing:.02em;line-height:.95;margin:12px 0 10px;color:var(--paper);
+}
+.cta-p{color:var(--paper-dim);font-size:1.06rem;max-width:44ch}
+@media(max-width:720px){.cta-inner{flex-direction:column;align-items:flex-start;padding:36px 28px}.btn-cta{width:100%;justify-content:center}}
