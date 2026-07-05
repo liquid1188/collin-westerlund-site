@@ -1,14 +1,19 @@
 
 :root{
-  --ink:#16110d;
-  --panel:#211a13;
-  --panel-2:#2a2119;
-  --paper:#f5efe2;
-  --paper-dim:#dbd1bc;
-  --amber:#e2a13c;
-  --teal:#7fada4;
-  --rust:#c4522a;
-  --hairline:rgba(239,230,214,.14);
+  /* palette scanned from the photo set:
+     blacks #020202-#353535 (hero, sessions, piano) -> ink/panels
+     film-stock bone #DED8CD / #E0E0E0 (about, sess1) -> paper
+     tungsten sienna #995A2C / #946F60 / #CDA888 (sess2, payphone, sunset) -> accent
+     slate #A8BFC3 / #53585A (guitars, tunnel) -> cool secondary */
+  --ink:#141414;
+  --panel:#1D1C1A;
+  --panel-2:#26241F;
+  --paper:#DED8CD;
+  --paper-dim:#A99E8F;
+  --amber:#BA7440;
+  --teal:#8FA6AB;
+  --rust:#8C4A26;
+  --hairline:rgba(222,216,205,.14);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;background:var(--ink)}
@@ -17,9 +22,9 @@ html{scroll-behavior:smooth;background:var(--ink)}
   *,*::before,*::after{animation:none!important;transition:none!important}
 }
 body{
-  background:#16110d;
+  background:#141414;
   background:var(--ink);
-  color:#f5efe2;
+  color:#DED8CD;
   color:var(--paper);
   font-family:'Spectral',Georgia,serif;
   font-weight:400;
@@ -424,3 +429,35 @@ nav ul a.active::after{content:"";display:block;height:2px;background:var(--ambe
   font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.12em;
   text-transform:uppercase;color:var(--paper-dim);text-align:center;
 }
+
+
+/* ===== record house history card ===== */
+.history-card{
+  margin-top:54px;background:var(--panel);border:1px solid var(--hairline);
+  border-left:4px solid var(--amber);border-radius:6px;
+  padding:34px 38px;
+}
+.history-card .cat{margin-bottom:10px}
+.history-card h3{
+  font-family:'Big Shoulders Display',sans-serif;font-weight:700;text-transform:uppercase;
+  font-size:1.5rem;letter-spacing:.04em;color:var(--paper);margin-bottom:12px;
+}
+.history-card p{color:var(--paper-dim);max-width:72ch}
+.history-card p + p{margin-top:12px}
+.history-card .hc-link{display:inline-block;margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:.8rem;letter-spacing:.08em}
+@media(max-width:640px){.history-card{padding:24px 22px}}
+
+/* ===== work with collin ===== */
+.wk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:44px}
+.wk-card{
+  background:var(--panel);border:1px solid var(--hairline);border-radius:6px;
+  padding:30px 28px;display:flex;flex-direction:column;
+}
+.wk-card .wk-num{font-family:'IBM Plex Mono',monospace;color:var(--amber);font-size:.78rem;letter-spacing:.14em;margin-bottom:14px}
+.wk-card h3{
+  font-family:'Big Shoulders Display',sans-serif;font-weight:700;text-transform:uppercase;
+  font-size:1.4rem;letter-spacing:.04em;color:var(--paper);margin-bottom:10px;
+}
+.wk-card p{color:var(--paper-dim);font-size:.98rem;flex:1}
+.wk-note{margin-top:44px;color:var(--paper-dim);font-style:italic;max-width:62ch}
+@media(max-width:840px){.wk-grid{grid-template-columns:1fr}}
