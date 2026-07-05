@@ -25,9 +25,9 @@
     <ul id="nav-menu">
       <li><a href="index.html">Home</a></li>
       <li><a href="music.html" class="active">Music</a></li>
-      <li><a href="work.html">Work With Collin</a></li>
       <li><a href="photos.html">Photos</a></li>
       <li><a href="notebook.html">Notebook</a></li>
+      <li class="nav-cta-li"><a class="nav-cta" href="work.html">Work With Collin</a></li>
     </ul>
   </div>
 </nav>
@@ -41,7 +41,7 @@
 
 <section>
   <div class="wrap">
-    <div class="sec-head"><span class="cat">Discography</span><h2>The Records</h2></div>
+    <div class="sec-head reveal"><span class="cat">Discography</span><h2>The Records</h2></div>
     <div class="records">
       <div class="record">
         <div class="sleeve-wrap"><div class="disc lab-cream"></div><img class="sleeve" src="assets/img/cov_hctr.jpg" alt="Here Comes The Rain single cover"></div>
@@ -69,7 +69,7 @@
 
 <section style="border-bottom:none">
   <div class="wrap">
-    <div class="sec-head"><span class="cat">On Film</span><h2>The Videos</h2></div>
+    <div class="sec-head reveal"><span class="cat">On Film</span><h2>The Videos</h2></div>
     <div class="videos">
       <div class="video-card">
         <div class="frame"><iframe loading="lazy" src="https://www.youtube.com/embed/fB7lzp_EeBI" title="To The Sun (Official Music Video)" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
@@ -88,6 +88,18 @@
 </section>
 
 </main>
+<script>
+(function(){
+  var nav=document.querySelector('nav');
+  var onScroll=function(){nav.classList.toggle('scrolled',window.scrollY>20)};
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && els.length){
+    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+    els.forEach(function(el){io.observe(el)});
+  } else { els.forEach(function(el){el.classList.add('in')}); }
+})();
+</script>
 <footer>
   <div class="wrap">
     <div class="foot-mark">Collin <span>Westerlund</span></div>

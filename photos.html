@@ -25,9 +25,9 @@
     <ul id="nav-menu">
       <li><a href="index.html">Home</a></li>
       <li><a href="music.html">Music</a></li>
-      <li><a href="work.html">Work With Collin</a></li>
       <li><a href="photos.html" class="active">Photos</a></li>
       <li><a href="notebook.html">Notebook</a></li>
+      <li class="nav-cta-li"><a class="nav-cta" href="work.html">Work With Collin</a></li>
     </ul>
   </div>
 </nav>
@@ -63,6 +63,18 @@
 </section>
 
 </main>
+<script>
+(function(){
+  var nav=document.querySelector('nav');
+  var onScroll=function(){nav.classList.toggle('scrolled',window.scrollY>20)};
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && els.length){
+    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+    els.forEach(function(el){io.observe(el)});
+  } else { els.forEach(function(el){el.classList.add('in')}); }
+})();
+</script>
 <footer>
   <div class="wrap">
     <div class="foot-mark">Collin <span>Westerlund</span></div>
