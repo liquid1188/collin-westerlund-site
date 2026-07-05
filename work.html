@@ -19,7 +19,10 @@
 <nav>
   <div class="wrap">
     <a class="nav-mark" href="index.html" aria-label="Home"><span class="nm-full">Collin <span>Westerlund</span></span><span class="nm-abbr">C<span>W</span></span></a>
-    <ul>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu" onclick="var n=document.getElementById('nav-menu');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.classList.toggle('is-open',o);">
+      <span></span><span></span><span></span>
+    </button>
+    <ul id="nav-menu">
       <li><a href="index.html">Home</a></li>
       <li><a href="music.html">Music</a></li>
       <li><a href="work.html" class="active">Work With Collin</a></li>
@@ -78,7 +81,7 @@
 <footer>
   <div class="wrap">
     <div class="foot-mark">Collin <span>Westerlund</span></div>
-    <div class="foot-note">&copy; 2026 Collin Westerlund &middot; Baltimore, MD &middot; <a href="mailto:collinthomaswest@protonmail.com">collinthomaswest@protonmail.com</a> &middot; Photography by Charlene Westerlund</div>
+    <div class="foot-note">&copy; 2026 Collin Westerlund &middot; Baltimore, MD &middot; Photography by Charlene Westerlund</div>
   </div>
 </footer>
 </body>

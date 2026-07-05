@@ -57,10 +57,25 @@ nav ul a{
   text-transform:uppercase;color:var(--paper-dim);white-space:nowrap;
 }
 nav ul a:hover{color:var(--amber);text-decoration:none}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:none;border:none;cursor:pointer;padding:0;margin-left:auto}
+.nav-toggle span{display:block;width:24px;height:2px;background:var(--paper);transition:transform .25s,opacity .25s;margin:0 auto}
+.nav-toggle.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.is-open span:nth-child(2){opacity:0}
+.nav-toggle.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 @media(max-width:760px){
-  nav ul{gap:15px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-left:4px}
-  nav ul::-webkit-scrollbar{display:none}
-  nav ul a{font-size:.66rem;letter-spacing:.1em}
+  nav .wrap{position:relative}
+  .nav-toggle{display:flex}
+  nav ul{
+    position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;
+    background:var(--panel);border-bottom:1px solid var(--hairline);
+    max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0;
+  }
+  nav ul.open{max-height:60vh}
+  nav ul li{width:100%;border-top:1px solid var(--hairline)}
+  nav ul li:first-child{border-top:none}
+  nav ul a{display:block;padding:16px 24px;font-size:.8rem;letter-spacing:.12em;width:100%}
+  nav ul a::after{display:none}
+  nav ul a:hover{color:var(--amber)}
 }
 @media(max-width:430px){
   .nm-full{display:none}
