@@ -489,3 +489,39 @@ nav ul a.active::after{content:"";display:block;height:2px;background:var(--ambe
 }
 .cta-p{color:var(--paper-dim);font-size:1.06rem;max-width:44ch}
 @media(max-width:720px){.cta-inner{flex-direction:column;align-items:flex-start;padding:36px 28px}.btn-cta{width:100%;justify-content:center}}
+
+/* ===== mailing list signup ===== */
+.signup{
+  background:var(--panel);border:1px solid var(--hairline);border-radius:10px;
+  padding:48px 52px;display:grid;grid-template-columns:1fr auto;gap:28px 40px;align-items:center;
+}
+.signup-copy{grid-column:1/-1;max-width:52ch}
+.signup-h{font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;
+  font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:.02em;line-height:.95;margin:12px 0 10px;color:var(--paper)}
+.signup-p{color:var(--paper-dim);font-size:1.06rem}
+.signup-form{grid-column:1/-1;display:flex;gap:12px;flex-wrap:wrap;max-width:560px}
+.signup-input{
+  flex:1;min-width:220px;background:var(--ink);border:1.5px solid rgba(222,216,205,.32);border-radius:999px;
+  padding:16px 24px;color:var(--paper);font-family:'IBM Plex Mono',monospace;font-size:.9rem;
+}
+.signup-input:focus{outline:none;border-color:var(--amber)}
+.signup-input::placeholder{color:var(--paper-dim);opacity:.7}
+.signup-btn{
+  font-family:'Big Shoulders Display',sans-serif;font-weight:700;text-transform:uppercase;font-size:1.1rem;letter-spacing:.05em;
+  color:#141414;background:var(--amber);border:2px solid var(--amber);border-radius:999px;padding:16px 34px;cursor:pointer;
+  transition:transform .2s,box-shadow .25s,background .2s;box-shadow:0 8px 24px rgba(186,116,64,.25);
+}
+.signup-btn:hover{background:#c9884f;border-color:#c9884f;transform:translateY(-2px);box-shadow:0 14px 34px rgba(186,116,64,.4)}
+.signup-fine{grid-column:1/-1;font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--paper-dim);opacity:.75}
+@media(max-width:640px){.signup{padding:32px 26px}}
+
+/* ===== contact row (work page) ===== */
+.contact-row{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;margin-top:52px;align-items:start}
+.email-lg{
+  display:inline-block;margin-top:12px;font-family:'Big Shoulders Display',sans-serif;font-weight:700;
+  text-transform:none;font-size:clamp(1.3rem,3vw,1.9rem);letter-spacing:.01em;color:var(--amber);word-break:break-all;
+}
+.email-lg:hover{text-decoration:underline}
+footer .foot-note a{color:var(--paper-dim);text-decoration:underline;text-decoration-color:rgba(222,216,205,.3)}
+footer .foot-note a:hover{color:var(--amber)}
+@media(max-width:720px){.contact-row{grid-template-columns:1fr;gap:32px}}

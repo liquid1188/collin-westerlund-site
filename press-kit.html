@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=IBM+Plex+Mono:wght@400;500&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap');
+@page { size: letter; margin: 0; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Spectral',Georgia,serif;color:#DED8CD;background:#141414;line-height:1.5}
+.page{width:8.5in;min-height:11in;background:#141414;padding:0.6in 0.7in;position:relative}
+.mono{font-family:'IBM Plex Mono',monospace}
+.amber{color:#BA7440}
+
+/* header */
+.masthead{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid rgba(222,216,205,.18);padding-bottom:16px}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:8pt;letter-spacing:.22em;text-transform:uppercase;color:#BA7440}
+h1{font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;font-size:44pt;line-height:.86;letter-spacing:.01em;margin-top:6px}
+.h1 .l2{color:#BA7440;display:block}
+.roles{font-family:'IBM Plex Mono',monospace;font-size:8.5pt;letter-spacing:.14em;text-transform:uppercase;color:#A99E8F;text-align:right;line-height:1.9;padding-top:8px}
+
+/* body grid */
+.grid{display:grid;grid-template-columns:2.7in 1fr;gap:0.42in;margin-top:22px}
+.photo{width:100%;height:3.5in;object-fit:cover;object-position:center 25%;filter:grayscale(1) contrast(1.05);border:1px solid rgba(222,216,205,.2)}
+.photo-cap{font-family:'IBM Plex Mono',monospace;font-size:6.5pt;letter-spacing:.1em;text-transform:uppercase;color:#A99E8F;margin-top:6px}
+
+h2{font-family:'Big Shoulders Display',sans-serif;font-weight:700;text-transform:uppercase;font-size:13pt;letter-spacing:.05em;color:#DED8CD;margin:0 0 8px;display:flex;align-items:center;gap:8px}
+h2::before{content:"";width:16px;height:1px;background:#BA7440}
+.bio p{font-size:9.5pt;margin-bottom:9px;max-width:60ch}
+.quote{border-left:2px solid #BA7440;padding-left:12px;margin:14px 0;font-style:italic;font-size:10pt;color:#DED8CD}
+.quote cite{display:block;font-style:normal;font-family:'IBM Plex Mono',monospace;font-size:7pt;letter-spacing:.12em;text-transform:uppercase;color:#A99E8F;margin-top:5px}
+
+/* lower sections */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:0.42in;margin-top:20px;border-top:1px solid rgba(222,216,205,.18);padding-top:18px}
+.disc-list, .fact-list{list-style:none}
+.disc-list li{display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-bottom:1px solid rgba(222,216,205,.1);font-size:9pt}
+.disc-list .yr{font-family:'IBM Plex Mono',monospace;font-size:7.5pt;color:#A99E8F;white-space:nowrap}
+.fact-list li{font-size:9pt;padding:4px 0;display:flex;gap:8px}
+.fact-list .fl{font-family:'IBM Plex Mono',monospace;font-size:7pt;letter-spacing:.1em;text-transform:uppercase;color:#BA7440;width:74px;flex-shrink:0;padding-top:2px}
+
+/* footer contact bar */
+.contact{position:absolute;left:0.7in;right:0.7in;bottom:0.5in;border-top:1px solid rgba(222,216,205,.18);padding-top:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.contact .em{font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:13pt;color:#BA7440}
+.contact .lk{font-family:'IBM Plex Mono',monospace;font-size:7.5pt;letter-spacing:.08em;color:#A99E8F;line-height:1.8}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <div>
+      <div class="kicker">Press Kit &middot; 2026</div>
+      <h1 class="h1">Collin<span class="l2">Westerlund</span></h1>
+    </div>
+    <div class="roles">
+      Producer<br>Songwriter<br>Multi&#8209;Instrumentalist<br>
+      <span class="amber">Baltimore, MD</span>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div>
+      <img class="photo" src="assets/img/hero.jpg" alt="Collin Westerlund">
+      <div class="photo-cap">Photo: Charlene Westerlund</div>
+    </div>
+    <div class="bio">
+      <h2>Biography</h2>
+      <p>Collin Westerlund is a producer, songwriter, and multi-instrumentalist from Baltimore. On his debut LP <em>Beautiful World</em>, he wrote all twelve songs and performed every part himself &mdash; drums, bass, guitars, keys, and every layer of vocal harmony.</p>
+      <p>His sound is deliberately old-school: Motown, classic soul, and the kind of harmony singing built to last, with clean lyrics and craftsmanship over novelty. He came up through Baltimore's punk and rap scenes, spent time building a record label in Bentonville, Arkansas &mdash; where the Arkansas Democrat-Gazette profiled his work &mdash; and has since brought the whole operation home to a recording room in Baltimore.</p>
+      <div class="quote">
+        "We're just trying to focus on music that makes you feel good."
+        <cite>&mdash; Collin Westerlund, Arkansas Democrat-Gazette, 2023</cite>
+      </div>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div>
+      <h2>Selected Discography</h2>
+      <ul class="disc-list">
+        <li><span>Beautiful World <span style="color:#A99E8F">(LP)</span></span><span class="yr">2022</span></li>
+        <li><span>Here Comes The Rain</span><span class="yr">2021</span></li>
+        <li><span>After All</span><span class="yr">2022</span></li>
+        <li><span>To The Sun</span><span class="yr">2023</span></li>
+        <li><span>Move <span style="color:#A99E8F">(feat.)</span></span><span class="yr">2023</span></li>
+      </ul>
+    </div>
+    <div>
+      <h2>At A Glance</h2>
+      <ul class="fact-list">
+        <li><span class="fl">Based</span><span>Baltimore, Maryland</span></li>
+        <li><span class="fl">Sound</span><span>Retro soul &middot; classic pop &middot; vocal harmony</span></li>
+        <li><span class="fl">Does</span><span>Writes, arranges, produces, plays &amp; sings all of it</span></li>
+        <li><span class="fl">For Hire</span><span>Live dates &middot; production for artists &middot; press</span></li>
+        <li><span class="fl">Press</span><span>Arkansas Democrat-Gazette (2023)</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="contact">
+    <div>
+      <div class="em">collinthomaswest@protonmail.com</div>
+    </div>
+    <div class="lk">
+      Bandcamp: collinwesterlund.bandcamp.com<br>
+      Spotify &middot; SoundCloud &middot; YouTube &middot; Instagram @collinwesterlu
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
