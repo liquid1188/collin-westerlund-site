@@ -531,15 +531,15 @@ nav ul a.active::after{content:"";display:block;height:2px;background:var(--ambe
 @media(max-width:640px){.signup{padding:32px 26px}}
 
 /* ===== contact row (work page) ===== */
-.contact-row{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;margin-top:52px;align-items:start}
+.contact-block{margin-top:52px;padding-top:32px;border-top:1px solid var(--hairline)}
 .email-lg{
-  display:inline-block;margin-top:12px;font-family:'Big Shoulders Display',sans-serif;font-weight:700;
-  text-transform:none;font-size:clamp(1.3rem,3vw,1.9rem);letter-spacing:.01em;color:var(--amber);word-break:break-all;
+  display:inline-block;margin:12px 0;font-family:'Big Shoulders Display',sans-serif;font-weight:700;
+  text-transform:none;font-size:clamp(1.4rem,3.2vw,2.1rem);letter-spacing:.01em;color:var(--amber);word-break:break-all;
 }
 .email-lg:hover{text-decoration:underline}
+.contact-buttons{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:24px}
 footer .foot-note a{color:var(--paper-dim);text-decoration:underline;text-decoration-color:rgba(222,216,205,.3)}
 footer .foot-note a:hover{color:var(--amber)}
-@media(max-width:720px){.contact-row{grid-template-columns:1fr;gap:32px}}
 
 /* ===== nav CTA button ===== */
 .nav-cta{

@@ -4,7 +4,7 @@
    can see the passcode. Do not store anything private here. */
 
 (function () {
-  var PASS = "beautifulworld"; // change in this file anytime
+  var PASS = "alfie"; // change in this file anytime
   var LS_KEY = "cw_notebook_notes_v1";
 
   var seedNotes = [
