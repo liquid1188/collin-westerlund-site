@@ -42,22 +42,37 @@
 
 <section style="border-bottom:none">
   <div class="wrap">
-    <div class="entries">
-      <article class="entry">
-        <div class="ed">Now</div>
-        <h3>Set Up In Baltimore</h3>
-        <p>The recording room in the new Baltimore house is up and running. First order of business: new songs, tracked the same way as always &mdash; one part at a time, every instrument by hand, until the room sounds like a whole band.</p>
-        <p>If you're a Baltimore singer or player and you want to make something, the door's open. <a href="work.html">Here's how to reach me.</a></p>
-      </article>
-      <article class="entry">
-        <div class="ed">On The Record</div>
-        <h3>What "Old School" Means To Me</h3>
-        <p>People hear "retro" and think costume. I don't mean costume. I mean the way records used to get built &mdash; real harmony, real arrangement, a song that's trying to make you feel good instead of trying to be clever. Motown, Gamble &amp; Huff, the stuff that still holds up fifty years on. That's the bar.</p>
-      </article>
+
+    <div id="nb-composer" class="nb-composer" style="display:none">
+      <div class="nb-composer-head">
+        <span class="cat">New Note</span>
+        <button id="nb-lock" class="nb-lock" style="display:none">Lock &amp; Done</button>
+      </div>
+      <input id="nb-date" class="nb-input" type="text" placeholder="Label (e.g. Now, On The Record, Jul 2026)" maxlength="40">
+      <input id="nb-title" class="nb-input" type="text" placeholder="Title" maxlength="90">
+      <textarea id="nb-body" class="nb-textarea" rows="6" placeholder="Write your note. Leave a blank line between paragraphs."></textarea>
+      <div class="nb-actions">
+        <button id="nb-add" class="btn-cta">Post Note <span class="btn-arrow">&rarr;</span></button>
+        <button id="nb-export" class="chip">Export notes (HTML)</button>
+      </div>
+      <textarea id="nb-export-out" class="nb-export-out" style="display:none" readonly rows="5" aria-label="Exported note HTML"></textarea>
+      <p class="nb-fineprint">Notes are saved in this browser only &mdash; not shared or backed up. To make them permanent on the live site, use <em>Export</em> and paste into the repo. This passcode is a convenience lock, not real security.</p>
+    </div>
+
+    <div id="nb-entries" class="entries" data-editing="0">
+      <!-- notes render here via assets/notebook.js -->
+    </div>
+
+    <div id="nb-gate" class="nb-gate">
+      <span class="nb-gate-key" aria-hidden="true">&#128273;</span>
+      <input id="nb-pass" class="nb-input nb-pass" type="password" placeholder="Passcode to add a note" aria-label="Notebook passcode">
+      <button id="nb-unlock" class="chip">Unlock</button>
+      <span id="nb-gate-msg" class="nb-gate-msg" role="status"></span>
     </div>
 
   </div>
 </section>
+<script src="assets/notebook.js"></script>
 
 </main>
 <script>
