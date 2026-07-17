@@ -139,7 +139,7 @@ section{padding:96px 0;border-bottom:1px solid var(--hairline);scroll-margin-top
   section{padding:64px 0}
   .sec-head{margin-bottom:36px}
   .about-grid{gap:36px}
-  .records{gap:40px 24px}
+  .records{gap:40px 56px}
 }
 .sec-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px 18px;margin-bottom:52px}
 .sec-head .cat{
@@ -175,8 +175,9 @@ section{padding:96px 0;border-bottom:1px solid var(--hairline);scroll-margin-top
 
 /* ===== discography: sleeves + vinyl ===== */
 .disc-note{max-width:60ch;color:var(--paper-dim);margin-bottom:48px;font-size:1rem}
-.records{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:52px 36px}
+.records{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:52px 88px}
 .record{text-align:left}
+.record:hover{position:relative;z-index:5}
 .sleeve-wrap{position:relative;max-width:270px}
 .sleeve{
   position:relative;z-index:2;display:block;width:100%;aspect-ratio:1;object-fit:cover;
