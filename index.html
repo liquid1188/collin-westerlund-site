@@ -52,7 +52,6 @@
     </div>
   </div>
   <div class="hero-photo"><img src="assets/img/hero.jpg" alt="Black and white portrait of Collin Westerlund"></div>
-  <a class="scroll-cue" href="#about" aria-label="Scroll to about"><span></span></a>
 </header>
 
 
@@ -152,6 +151,9 @@
   var nav=document.querySelector('nav');
   var onScroll=function(){nav.classList.toggle('scrolled',window.scrollY>20)};
   window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var pill=document.getElementById('work-pill');
+  var onPill=function(){pill.classList.toggle('show',window.scrollY>window.innerHeight*0.6)};
+  window.addEventListener('scroll',onPill,{passive:true});onPill();
   var els=document.querySelectorAll('.reveal');
   if('IntersectionObserver' in window && els.length){
     var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
@@ -165,5 +167,6 @@
     <div class="foot-note">&copy; 2026 Collin Westerlund &middot; Baltimore, MD &middot; Site by <a href="https://lickitysplitweb.com/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Lickity Split Web Design</a></div>
   </div>
 </footer>
+<a id="work-pill" href="work.html" aria-label="Work with Collin">Work With Collin</a>
 </body>
 </html>
