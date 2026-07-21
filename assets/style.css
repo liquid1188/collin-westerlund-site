@@ -364,7 +364,7 @@ nav ul a:hover::after{right:0}
 }
 a.plogo:hover{border-color:var(--amber);transform:translateY(-3px);box-shadow:0 14px 34px rgba(0,0,0,.35);text-decoration:none}
 .plogo-img{display:block;height:34px;width:auto;max-width:82%;object-fit:contain}
-.plogo-img-pat{height:26px}
+.plogo-img-pat{height:34px}
 .plogo-cap{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--paper-dim);line-height:1.9}
 .plogo-soon{opacity:.75}
 .soon-tag{
