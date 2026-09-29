@@ -1,0 +1,102 @@
+{
+  "items": [
+    {
+      "title": "She Was",
+      "type": "Single",
+      "date": "2026-08-14",
+      "cover": "/assets/img/cov_shewas.jpg",
+      "cover_alt": "She Was single cover, a city skyline at sunset",
+      "label": "rust",
+      "detail": "",
+      "spotify": "https://open.spotify.com/track/3YbYpYj0zsm4by7sf2f5mP",
+      "apple": "https://music.apple.com/us/album/she-was/6798529650?i=6798529651",
+      "tidal": "https://tidal.com/browse/album/549638735",
+      "youtube": "",
+      "link": ""
+    },
+    {
+      "title": "Picture This",
+      "type": "Single",
+      "date": "2026-07-17",
+      "cover": "/assets/img/cov_pt.jpg",
+      "cover_alt": "Picture This single cover",
+      "label": "teal",
+      "detail": "",
+      "spotify": "https://open.spotify.com/track/74m7k4Wm2GoosBmdgCuNGl",
+      "apple": "https://music.apple.com/us/song/picture-this/6787172249",
+      "tidal": "https://tidal.com/browse/album/539614729",
+      "youtube": "https://youtu.be/zmo-eMgXjws",
+      "link": ""
+    },
+    {
+      "title": "Move",
+      "type": "Single",
+      "date": "2023-08-04",
+      "cover": "/assets/img/cov_move.jpg",
+      "cover_alt": "Move single cover",
+      "label": "cream",
+      "detail": "",
+      "spotify": "",
+      "apple": "",
+      "tidal": "",
+      "youtube": "",
+      "link": "https://youtu.be/R61pnHXUs5E"
+    },
+    {
+      "title": "To The Sun",
+      "type": "Single",
+      "date": "2023-07-01",
+      "cover": "/assets/img/cov_tts.jpg",
+      "cover_alt": "To The Sun single cover",
+      "label": "rust",
+      "detail": "",
+      "spotify": "",
+      "apple": "",
+      "tidal": "",
+      "youtube": "",
+      "link": "https://collinwesterlund.bandcamp.com/track/to-the-sun"
+    },
+    {
+      "title": "Beautiful World",
+      "type": "LP",
+      "date": "2022-02-22",
+      "cover": "/assets/img/cov_bw.jpg",
+      "cover_alt": "Beautiful World album cover",
+      "label": "amber",
+      "detail": "A001AA · 12 Tracks",
+      "spotify": "",
+      "apple": "",
+      "tidal": "",
+      "youtube": "",
+      "link": "https://collinwesterlund.bandcamp.com/album/beautiful-world"
+    },
+    {
+      "title": "After All",
+      "type": "Single",
+      "date": "2022-01-01",
+      "cover": "/assets/img/cov_afterall.jpg",
+      "cover_alt": "After All single cover",
+      "label": "teal",
+      "detail": "",
+      "spotify": "",
+      "apple": "",
+      "tidal": "",
+      "youtube": "",
+      "link": "https://collinwesterlund.bandcamp.com/track/after-all"
+    },
+    {
+      "title": "Here Comes The Rain",
+      "type": "Single",
+      "date": "2021-12-01",
+      "cover": "/assets/img/cov_hctr.jpg",
+      "cover_alt": "Here Comes The Rain single cover",
+      "label": "cream",
+      "detail": "",
+      "spotify": "",
+      "apple": "",
+      "tidal": "",
+      "youtube": "",
+      "link": "https://collinwesterlund.bandcamp.com/track/here-comes-the-rain"
+    }
+  ]
+}

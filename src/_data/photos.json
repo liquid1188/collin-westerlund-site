@@ -1,0 +1,84 @@
+{
+  "items": [
+    {
+      "image": "/assets/img/piano.jpg",
+      "alt": "Singing atop an upright piano on a city street at night",
+      "caption": "Street piano, after dark"
+    },
+    {
+      "image": "/assets/img/guitars.jpg",
+      "alt": "Two musicians walking with acoustic guitars slung on their backs",
+      "caption": "Guitars over shoulders"
+    },
+    {
+      "image": "/assets/img/drums.jpg",
+      "alt": "Behind a drum kit with tapestries on the wall",
+      "caption": "Behind the kit"
+    },
+    {
+      "image": "/assets/img/window.jpg",
+      "alt": "Playing acoustic guitar beside a window with tulips",
+      "caption": "Window seat, writing"
+    },
+    {
+      "image": "/assets/img/couch.jpg",
+      "alt": "Playing guitar on a couch, black and white",
+      "caption": "Couch takes"
+    },
+    {
+      "image": "/assets/img/fence.jpg",
+      "alt": "Night portrait against a chain-link fence",
+      "caption": "Under the overpass"
+    },
+    {
+      "image": "/assets/img/night.jpg",
+      "alt": "Turning back on a night street under sodium lights",
+      "caption": "Sodium light"
+    },
+    {
+      "image": "/assets/img/sunset.jpg",
+      "alt": "Golden-hour portrait looking over shoulder",
+      "caption": "Golden hour"
+    },
+    {
+      "image": "/assets/img/payphone.jpg",
+      "alt": "On a payphone in a warm-toned city shot",
+      "caption": "Long distance"
+    },
+    {
+      "image": "/assets/img/pizza.jpg",
+      "alt": "Eating a slice of pizza in a black and white photo",
+      "caption": "One slice, folded"
+    },
+    {
+      "image": "/assets/img/diner.jpg",
+      "alt": "Smiling at a diner counter",
+      "caption": "Counter seat"
+    },
+    {
+      "image": "/assets/img/balcony.jpg",
+      "alt": "Black and white portrait on a balcony among power lines",
+      "caption": "Fire escape morning"
+    },
+    {
+      "image": "/assets/img/denim.jpg",
+      "alt": "High-contrast black and white portrait in a denim jacket",
+      "caption": "Denim, grain"
+    },
+    {
+      "image": "/assets/img/tunnel.jpg",
+      "alt": "Lying inside a concrete tunnel, feet up",
+      "caption": "Inside the pipe"
+    },
+    {
+      "image": "/assets/img/bus.jpg",
+      "alt": "Standing in an abandoned graffitied bus",
+      "caption": "The abandoned bus"
+    },
+    {
+      "image": "/assets/img/beach.jpg",
+      "alt": "Silhouette jumping on a beach at sunset",
+      "caption": "Jump at dusk"
+    }
+  ]
+}

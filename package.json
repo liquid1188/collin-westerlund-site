@@ -1,0 +1,7 @@
+{
+  "name": "collin-westerlund-site",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": { "build": "eleventy", "serve": "eleventy --serve" },
+  "devDependencies": { "@11ty/eleventy": "^3.1.6", "markdown-it": "^14.1.0" }
+}

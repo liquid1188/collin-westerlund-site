@@ -1,0 +1,40 @@
+---
+title: "Notebook — Collin Westerlund"
+description: "Short dispatches — new videos, sessions, and notes from Collin Westerlund."
+canonical: "/notebook.html"
+nav: "notebook"
+permalink: "notebook.html"
+layout: base.njk
+---
+
+<header class="page-head">
+  <div class="wrap ph-grid">
+    <div class="ph-copy">
+    <p class="eyebrow">Notes From The Room</p>
+    <h1>The Notebook</h1>
+    <p class="lede">Short dispatches from Collin &mdash; what he's recording, what he's listening to, and what's coming next out of the Baltimore room.</p>
+    </div>
+    <figure class="ph-photo"><img src="assets/img/sess3.jpg" alt="Collin at the mixing desk in his recording room" width="640" height="800"><figcaption>The Baltimore room</figcaption></figure>
+  </div>
+</header>
+
+<section style="border-bottom:none">
+  <div class="wrap">
+
+    <div class="entries">
+{%- for e in notebook.items | newestFirst %}
+      <article class="entry">
+        <div class="ed">{{ e.date | monDayYear }}</div>
+        <h3>{{ e.title }}</h3>
+        {{ e.body | md | safe }}
+        {%- if e.youtube %}
+        <div class="frame"><iframe loading="lazy" src="https://www.youtube.com/embed/{{ e.youtube }}" title="{{ e.title }}" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>{% endif %}
+        {%- if e.spotify %}
+        <div class="sp-frame"><iframe loading="lazy" src="https://open.spotify.com/embed/track/{{ e.spotify }}?utm_source=generator&amp;theme=0" title="{{ e.title }} on Spotify" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe></div>{% endif %}
+      </article>
+{%- endfor %}
+    </div>
+
+  </div>
+</section>
+

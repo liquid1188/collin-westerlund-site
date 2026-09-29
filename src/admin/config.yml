@@ -1,0 +1,159 @@
+backend:
+  name: github
+  repo: liquid1188/collin-westerlund-site
+  branch: main
+site_url: https://collinwesterlundmusic.com
+media_folder: src/assets/img/uploads
+public_folder: /assets/img/uploads
+media_libraries:
+  all:
+    transformations:
+      raster_image:
+        format: webp
+        quality: 86
+        width: 2000
+        height: 2000
+  default:
+    config:
+      max_file_size: 26214400
+      slugify_filename: true
+collections:
+- name: music
+  label: Music
+  icon: album
+  description: Add a release to the top of the list and it becomes the featured single on the home page. The one before it shows beside it as the previous single, and every release appears on the Music page, newest first. Site history and undo live at /admin/history/.
+  files:
+  - name: releases
+    label: Releases
+    file: src/_data/releases.json
+    fields:
+    - name: items
+      label: Releases
+      label_singular: Release
+      widget: list
+      summary: '{{fields.date}}  ·  {{fields.title}}'
+      fields:
+      - {name: title, label: Title, widget: string}
+      - name: type
+        label: Type
+        widget: select
+        options: [Single, EP, LP]
+        default: Single
+      - {name: date, label: Release date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, picker_utc: true}
+      - {name: cover, label: Cover art (square, at least 1000 px), widget: image}
+      - {name: cover_alt, label: Describe the cover in a few words, widget: string, required: false}
+      - name: label
+        label: Record label color (shows when you hover the sleeve)
+        widget: select
+        options: [amber, rust, teal, cream]
+        default: amber
+      - {name: detail, label: Extra detail (optional), hint: "Shown between the type and the date, like 'A001AA · 12 Tracks'.", widget: string, required: false}
+      - {name: spotify, label: Spotify link, widget: string, required: false}
+      - {name: apple, label: Apple Music link, widget: string, required: false}
+      - {name: tidal, label: Tidal link, widget: string, required: false}
+      - {name: youtube, label: YouTube link, widget: string, required: false}
+      - {name: link, label: Other link (Bandcamp etc.), hint: Used when there is no Spotify or Apple Music link., widget: string, required: false}
+  - name: videos
+    label: Music videos
+    file: src/_data/videos.json
+    fields:
+    - name: items
+      label: Videos
+      label_singular: Video
+      widget: list
+      summary: '{{fields.title}}'
+      hint: The first video runs full width on the Music page.
+      fields:
+      - {name: id, label: YouTube ID, hint: "The part after v= in the address. In youtube.com/watch?v=ABC123, the ID is ABC123.", widget: string}
+      - {name: title, label: Title, widget: string}
+      - {name: sub, label: Small line under the title, hint: "Like 'Official Music Video · 2023'.", widget: string, required: false}
+- name: notebook
+  label: Notebook
+  icon: edit_note
+  description: Short posts for the Notebook page. Newest shows first, sorted by date.
+  files:
+  - name: entries
+    label: Notebook posts
+    file: src/_data/notebook.json
+    fields:
+    - name: items
+      label: Posts
+      label_singular: Post
+      widget: list
+      summary: '{{fields.date}}  ·  {{fields.title}}'
+      fields:
+      - {name: date, label: Date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, picker_utc: true}
+      - {name: title, label: Title, widget: string}
+      - {name: body, label: Text, widget: markdown, buttons: [bold, italic, link], editor_components: [], minimal: true}
+      - {name: youtube, label: YouTube video ID (optional), widget: string, required: false}
+      - {name: spotify, label: Spotify track ID (optional), hint: "The part after /track/ in a Spotify song link.", widget: string, required: false}
+- name: press
+  label: Press
+  icon: newspaper
+  description: Articles about Collin, shown on the home page in this order.
+  files:
+  - name: press
+    label: Press
+    file: src/_data/press.json
+    fields:
+    - name: items
+      label: Articles
+      label_singular: Article
+      widget: list
+      summary: '{{fields.outlet}}  ·  {{fields.headline}}'
+      fields:
+      - {name: outlet, label: Publication, widget: string}
+      - {name: logo, label: Publication logo (light on transparent), widget: image}
+      - {name: date, label: Date shown, hint: "Like 'July 2026'.", widget: string}
+      - {name: headline, label: Headline, widget: string}
+      - {name: dek, label: One-line description, widget: string, required: false}
+      - {name: url, label: Link to the article, widget: string}
+      - {name: read, label: Link wording, default: Read the story, widget: string}
+- name: photos
+  label: Photos
+  icon: photo_library
+  description: The Photos page grid, in this order. Sixteen photos fill the grid evenly (four rows of four).
+  files:
+  - name: photos
+    label: Photos
+    file: src/_data/photos.json
+    fields:
+    - name: items
+      label: Photos
+      label_singular: Photo
+      widget: list
+      summary: '{{fields.caption}}'
+      fields:
+      - {name: image, label: Photo, widget: image}
+      - {name: alt, label: Describe the photo, widget: string}
+      - {name: caption, label: Short caption, widget: string}
+- name: settings
+  label: Site settings
+  icon: settings
+  files:
+  - name: site
+    label: Banner, email, and links
+    file: src/_data/site.json
+    fields:
+    - {name: url, label: Site address, widget: hidden}
+    - {name: email, label: Contact email, widget: string}
+    - name: announce
+      label: Banner across the top of the home page
+      widget: object
+      fields:
+      - {name: show, label: Show the banner, widget: boolean}
+      - {name: text, label: Banner text, widget: string}
+      - {name: link, label: Where it links, hint: "'#listen' jumps to New Music on the home page.", widget: string}
+    - name: follow
+      label: Follow links on the home page
+      label_singular: Link
+      widget: list
+      summary: '{{fields.name}}'
+      fields:
+      - {name: name, label: Name, widget: string}
+      - name: icon
+        label: Icon
+        widget: select
+        options: [spotify, bandcamp, soundcloud, instagram, linktree, youtube, apple, tidal, mail]
+      - {name: desc, label: One-line description, widget: string}
+      - {name: url, label: Link, widget: string}

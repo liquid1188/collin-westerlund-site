@@ -1,0 +1,50 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="robots" content="noindex">
+<title>Site history · Collin Westerlund</title>
+<style>
+:root{--ink:#1c1b18;--ink2:#5d5a52;--rule:#ddd7cb;--paper:#f7f4ee;--acc:#8C4A26;--ok:#2f6f3e;--warn:#9a3b2f}
+*{box-sizing:border-box}body{margin:0;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--paper)}
+.wrap{max-width:820px;margin:0 auto;padding:2rem 1.2rem 4rem}h1{font-size:1.6rem;margin:0 0 .3rem}.lede{color:var(--ink2);margin:0 0 1.6rem}
+.bar{display:flex;gap:.8rem;align-items:center;flex-wrap:wrap;margin-bottom:1.4rem}a.btn,button{font:inherit;padding:.55rem .9rem;border:1px solid var(--acc);background:var(--acc);color:#fff;border-radius:4px;cursor:pointer;text-decoration:none}
+button.ghost{background:transparent;color:var(--acc)}button[disabled]{opacity:.5;cursor:default}
+ol{list-style:none;padding:0;margin:0}li{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center;padding:.9rem 0;border-top:1px solid var(--rule)}
+li:first-child{border-top:0}.msg{font-weight:600}.meta{color:var(--ink2);font-size:.9rem}.cur{display:inline-block;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;background:var(--ok);color:#fff;padding:.15rem .45rem;border-radius:3px;margin-left:.5rem}
+.note{padding:.9rem 1rem;border:1px solid var(--rule);background:#fff;margin:0 0 1.4rem;border-radius:4px}.note.ok{border-color:#9bb59b;background:#eef5ee}.note.err{border-color:#c9a1a1;background:#f7ecec}
+details{margin-top:2rem;color:var(--ink2)}summary{cursor:pointer}code{background:#fff;border:1px solid var(--rule);padding:0 .3rem;border-radius:3px}
+@media(max-width:600px){li{grid-template-columns:1fr}}
+</style></head><body><div class="wrap">
+<h1>Site history</h1>
+<p class="lede">Every change to the site is saved here. Pick any earlier version and restore it. Restoring makes a new entry, so nothing is lost and you can undo the undo the same way.</p>
+<div class="bar"><a class="btn" href="../">Back to the editor</a><a class="btn" href="../../">View the site</a><button class="ghost" id="reload">Refresh</button><span class="meta" id="status"></span></div>
+<div class="note" id="note" hidden></div>
+<ol id="list"><li class="meta">Loading…</li></ol>
+<details><summary>What this does</summary><p>Each row is one saved change, newest first. <strong>Restore</strong> puts the whole site back to how it was right after that change, as a new saved version. It rebuilds within about two minutes. If you restore too far, restore the newer one again. Nothing is ever deleted from this list.</p><p>Restoring asks for the same access token you use to sign in to the editor. It is kept in this browser only.</p></details>
+</div>
+<script>
+const OWNER="liquid1188",REPO="collin-westerlund-site",BRANCH="main",API="https://api.github.com";
+const $=s=>document.querySelector(s);const list=$("#list"),note=$("#note"),status=$("#status");
+function say(t,k){note.textContent=t;note.className="note "+(k||"");note.hidden=false}
+function token(){try{const u=JSON.parse(localStorage.getItem("sveltia-cms.user")||"null");if(u&&u.token)return u.token}catch(e){}return localStorage.getItem("site-history-token")||""}
+function askToken(){let t=token();if(!t){t=prompt("Paste your editor access token to restore (it stays in this browser):")||"";if(t)localStorage.setItem("site-history-token",t.trim())}return t.trim()}
+function fmt(d){return new Date(d).toLocaleString(undefined,{dateStyle:"medium",timeStyle:"short"})}
+function who(c){const n=c.commit.author&&c.commit.author.name||"";if(n==="Andrew Likoudis"||n==="Lickity Split Deploy")return "Andrew";if(/sveltia|cms/i.test(c.commit.message)||c.author&&c.author.login&&c.author.login!=="liquid1188")return n||"Editor";return n==="Andrew Likoudis"?"Andrew":(n||"Editor")}
+function label(c){let m=c.commit.message.split("\n")[0];m=m.replace(/^(Create|Update|Delete) /,(x)=>x);return m.length>110?m.slice(0,107)+"…":m}
+async function load(){status.textContent="";list.innerHTML='<li class="meta">Loading…</li>';
+ const t0=token();const r=await fetch(`${API}/repos/${OWNER}/${REPO}/commits?sha=${BRANCH}&per_page=40`,t0?{headers:{Authorization:"Bearer "+t0}}:{});
+ if(!r.ok){list.innerHTML=`<li class="meta">${r.status===403?"Too many requests from this network in the last hour. Sign in to the editor first, then come back, or try again in an hour.":"Could not load the history right now. Try again in a minute."}</li>`;return}
+ const cs=await r.json();list.innerHTML="";
+ cs.forEach((c,i)=>{const li=document.createElement("li");
+  li.innerHTML=`<div><div class="msg">${label(c).replace(/[<>&]/g,s=>({"<":"&lt;",">":"&gt;","&":"&amp;"}[s]))}${i===0?'<span class="cur">Current</span>':''}</div><div class="meta">${fmt(c.commit.author.date)} · ${who(c)}</div></div><div>${i===0?"":`<button data-sha="${c.sha}" data-date="${c.commit.author.date}">Restore this version</button>`}</div>`;
+  list.appendChild(li)});
+ list.querySelectorAll("button").forEach(b=>b.onclick=()=>restore(b.dataset.sha,b.dataset.date,b))}
+async function restore(sha,date,btn){if(!confirm(`Restore the whole site to how it was on ${fmt(date)}? Later changes stay in the history and can be restored again.`))return;
+ const t=askToken();if(!t){say("No token entered. Nothing changed.","err");return}
+ const h={Authorization:"Bearer "+t,Accept:"application/vnd.github+json","Content-Type":"application/json"};
+ btn.disabled=true;say("Restoring…");
+ try{const cm=await (await fetch(`${API}/repos/${OWNER}/${REPO}/git/commits/${sha}`,{headers:h})).json();if(!cm.tree)throw new Error(cm.message||"Could not read that version");
+  const ref=await (await fetch(`${API}/repos/${OWNER}/${REPO}/git/ref/heads/${BRANCH}`,{headers:h})).json();if(!ref.object)throw new Error(ref.message||"Could not read the current version");
+  const nc=await (await fetch(`${API}/repos/${OWNER}/${REPO}/git/commits`,{method:"POST",headers:h,body:JSON.stringify({message:`Restore site to the version from ${fmt(date)}`,tree:cm.tree.sha,parents:[ref.object.sha]})})).json();if(!nc.sha)throw new Error(nc.message||"Could not create the restore");
+  const up=await fetch(`${API}/repos/${OWNER}/${REPO}/git/refs/heads/${BRANCH}`,{method:"PATCH",headers:h,body:JSON.stringify({sha:nc.sha,force:false})});if(!up.ok)throw new Error((await up.json()).message||"Could not apply the restore");
+  say("Restored. The site will update in about two minutes. This restore is now the newest entry below.","ok");await load()}
+ catch(e){say("Restore failed: "+e.message+(/Bad credentials|401/.test(e.message)?" Your token was not accepted; clear it and try again.":""),"err");if(/Bad credentials|401/.test(e.message))localStorage.removeItem("site-history-token");btn.disabled=false}}
+$("#reload").onclick=load;load();
+</script></body></html>

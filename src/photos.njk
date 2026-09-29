@@ -1,0 +1,31 @@
+---
+title: "Photos — Collin Westerlund"
+description: "Film photography — portraits, sessions, and street shots."
+canonical: "/photos.html"
+nav: "photos"
+scripts: ['lightbox.js']
+permalink: "photos.html"
+layout: base.njk
+---
+
+<header class="page-head">
+  <div class="wrap ph-grid">
+    <div class="ph-copy">
+    <p class="eyebrow">Contact Sheet</p>
+    <h1>On Film</h1>
+    <p class="lede">Grain, sodium light, and the occasional slice of pizza. Shot on film, mostly at night.</p>
+    </div>
+    <figure class="ph-photo"><img src="assets/img/cityvest.jpg" alt="Collin on a city street with a backpack and a map" width="640" height="800"><figcaption>Shot on film</figcaption></figure>
+  </div>
+</header>
+
+<section style="border-bottom:none">
+  <div class="wrap">
+    <div class="sheet">
+{%- for p in photos.items %}
+      <figure><button type="button" aria-label="Open photo: {{ p.caption }}"><img loading="lazy" src="{{ p.image | rel }}" alt="{{ p.alt }}"></button><figcaption>{{ p.caption }}</figcaption></figure>
+{%- endfor %}
+    </div>
+  </div>
+</section>
+

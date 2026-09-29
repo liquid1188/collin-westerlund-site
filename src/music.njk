@@ -1,0 +1,50 @@
+---
+title: "Music — Collin Westerlund"
+description: "Records and music videos by Collin Westerlund: She Was, Picture This, Beautiful World, To The Sun, Move, and more."
+canonical: "/music.html"
+nav: "music"
+permalink: "music.html"
+layout: base.njk
+---
+
+<header class="page-head">
+  <div class="wrap ph-grid">
+    <div class="ph-copy">
+    <p class="eyebrow">Discography &amp; Videos</p>
+    <h1>The Music</h1>
+    <p class="lede">Written, arranged, produced &mdash; and every instrument and vocal performed &mdash; by Collin Westerlund. Spin one.</p>
+    <p class="instruments">Drums &middot; Bass &middot; Guitars &middot; Piano &middot; Vocals</p>
+    <p class="instruments-aside">plus banjo, ukulele, and the occasional xylophone</p>
+    </div>
+    <figure class="ph-photo"><img src="assets/img/window.jpg" alt="Collin at a window with an acoustic guitar" width="640" height="800"><figcaption>Writing at the window</figcaption></figure>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="cat">Discography</span><h2>The Records</h2></div>
+    <div class="records">
+{%- for r in releases.items | newestFirst %}
+      <a class="record" href="{{ r | firstLink }}" target="_blank" rel="noopener" aria-label="Listen to {{ r.title }}">
+        <div class="sleeve-wrap"><div class="disc lab-{{ r.label or 'amber' }}"></div><img class="sleeve" loading="lazy" src="{{ r.cover | rel }}" alt="{{ r.cover_alt or (r.title + ' cover') }}"></div>
+        <div class="rec-meta"><div class="rt">{{ r.title }}{% if loop.first and (r.date | isNew) %} <span class="rn">New</span>{% endif %}</div><div class="rd">{{ r.type }}{% if r.detail %} &middot; {{ r.detail }}{% endif %} &middot; {{ r.date | monYear }}</div></div>
+      </a>
+{%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section style="border-bottom:none">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="cat">On Film</span><h2>The Videos</h2></div>
+    <div class="videos">
+{%- for v in videos.items %}
+      <div class="video-card">
+        <div class="frame"><iframe loading="lazy" src="https://www.youtube.com/embed/{{ v.id }}" title="{{ v.title }}" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vt">{{ v.title }}</div><div class="vd">{{ v.sub }}</div>
+      </div>
+{%- endfor %}
+    </div>
+  </div>
+</section>
+

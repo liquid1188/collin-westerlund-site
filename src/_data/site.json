@@ -1,0 +1,41 @@
+{
+  "url": "https://collinwesterlundmusic.com",
+  "email": "collinthomaswest@protonmail.com",
+  "announce": {
+    "show": true,
+    "text": "New single — “She Was” out now",
+    "link": "#listen"
+  },
+  "follow": [
+    {
+      "name": "Spotify",
+      "icon": "spotify",
+      "desc": "Follow the artist page",
+      "url": "https://open.spotify.com/artist/6lQlkHcej7eKIt8NlWq0y7"
+    },
+    {
+      "name": "Bandcamp",
+      "icon": "bandcamp",
+      "desc": "Buy the records and CD",
+      "url": "https://collinwesterlund.bandcamp.com"
+    },
+    {
+      "name": "SoundCloud",
+      "icon": "soundcloud",
+      "desc": "Stream the full catalog",
+      "url": "https://soundcloud.com/collinwesterlund"
+    },
+    {
+      "name": "Instagram",
+      "icon": "instagram",
+      "desc": "@collinwesterlu",
+      "url": "https://www.instagram.com/collinwesterlu"
+    },
+    {
+      "name": "All Links",
+      "icon": "linktree",
+      "desc": "Every profile in one place",
+      "url": "https://linktr.ee/collinwesterlund"
+    }
+  ]
+}

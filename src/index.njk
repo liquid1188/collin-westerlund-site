@@ -1,0 +1,128 @@
+---
+title: "Collin Westerlund — Songwriter · Producer"
+description: "Songwriter, producer, and multi-instrumentalist. Available for gigs, production, and press. Baltimore, MD."
+canonical: "/"
+nav: "home"
+announce: true
+pill: true
+permalink: "index.html"
+layout: base.njk
+---
+
+<header class="hero" id="top">
+  <div class="hero-copy">
+    <h1>Collin<span class="l2">Westerlund</span></h1>
+    <p class="hero-roles"><b>Producer. Songwriter. Multi-instrumentalist.</b> Old-school songs with big harmonies, built one track at a time. He makes his own records and produces for other artists.</p>
+    <p class="hero-loc">Baltimore, MD &middot; Now booking gigs &amp; production.</p>
+    <div class="hero-actions">
+      <a class="btn-cta" href="music">Hear The Music <span class="btn-arrow">&rarr;</span></a>
+      <a class="btn-ghost" href="work">Work With Collin</a>
+    </div>
+  </div>
+  <div class="hero-photo"><img src="assets/img/hero.jpg" alt="Black and white portrait of Collin Westerlund"></div>
+</header>
+
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="cat">Liner Notes</span><h2>About</h2></div>
+    <div class="about-grid">
+      <figure class="about-photo">
+        <img src="assets/img/about.jpg" alt="Collin Westerlund in a turtleneck, backlit by window light">
+        <figcaption>Shot on film</figcaption>
+      </figure>
+      <div class="liner">
+        <p>I'm Collin Westerlund &mdash; a musician based in Baltimore. I play a lot of instruments, and on my album <em>Beautiful World</em> I played and sang all of them: every part, every harmony, written, arranged, and produced myself.</p>
+        <p>The music I make leans old school &mdash; vocal harmony, clean lyrics, the kind of classic pop and soul craftsmanship that's just trying to make you feel good. For a few years I ran a small record label, Arkansas House Records, out of a house in Bentonville, Arkansas: half of it was the studio, and I wrote and produced for singers who didn't have a band, a catalog, or anything released yet.</p>
+        <p>I'm back home in Baltimore now, and the new place has a recording room in it. Most days I'm in there working on my own songs, getting better at the craft one track at a time. I still take on production work too, so if you're making something, let's talk.</p>
+        <div class="pull">
+          "We're just trying to focus on music that makes you feel good."
+          <cite>&mdash; Collin Westerlund, in the <a href="https://www.arkansasonline.com/news/2023/apr/02/arkansas-house-records-has-big-plans-for/" target="_blank" rel="noopener">Arkansas Democrat-Gazette</a>, 2023</cite>
+        </div>
+      </div>
+    </div>
+
+    <div class="history-card reveal" id="record-house">
+      <span class="cat">A Chapter, Closed</span>
+      <h3>The Arkansas House Years</h3>
+      <p>In Bentonville, Arkansas, Collin founded Arkansas House Records &mdash; a label run out of the living-room studio of his own house, built for the little guy. He wrote the songs, produced the sessions, and gave local singers and players their first releases, aiming the sound at Motown, Gamble &amp; Huff, and the classics in their heyday. The Arkansas Democrat-Gazette profiled the project in 2023.</p>
+      <p>That chapter is closed &mdash; Collin no longer runs the label &mdash; but everything he learned producing other people's records came home to Baltimore with him.</p>
+      <a class="hc-link" href="https://www.arkansasonline.com/news/2023/apr/02/arkansas-house-records-has-big-plans-for/" target="_blank" rel="noopener">Read the Democrat-Gazette profile &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section id="press">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="cat">In Print</span><h2>Press</h2></div>
+    <div class="press-logos reveal">
+{%- for p in press.items %}
+      <a class="plogo" href="{{ p.url }}" target="_blank" rel="noopener">
+        <div class="pc-top"><img class="plogo-img" src="{{ p.logo | rel }}" alt="{{ p.outlet }}"><span class="pc-date">{{ p.date }}</span></div>
+        <h3 class="pc-head">{{ p.headline }}</h3>
+        {% if p.dek %}<p class="pc-dek">{{ p.dek }}</p>{% endif %}
+        <span class="pc-read">{{ p.read or "Read the story" }} &rarr;</span>
+      </a>
+{%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="listen" style="border-bottom:none">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="cat">Drop The Needle</span><h2>New Music</h2></div>
+    {%- set rels = releases.items | newestFirst %}
+    <div class="releases reveal">
+{%- for r in rels | batch(2) | first %}
+      <div class="single-spot {{ 'is-feature' if loop.first else 'is-mini' }}">
+        <a class="ss-cov" href="{{ r | firstLink }}" target="_blank" rel="noopener" aria-label="Listen to {{ r.title }}"><img src="{{ r.cover | rel }}" alt="{{ r.cover_alt or (r.title + ' cover') }}" width="1000" height="1000" loading="lazy"></a>
+        <div class="ss-info">
+          <div class="ss-cat">{% if loop.first %}New {{ r.type }} &mdash; Out Now{% else %}Previous {{ r.type }}{% endif %}</div>
+          <h3 class="ss-title">{{ r.title }}</h3>
+          <div class="ss-sub">{{ r.date | monDayYear }}</div>
+          {% include "partials/platforms.njk" %}
+        </div>
+      </div>
+{%- endfor %}
+    </div>
+    <div class="follow">
+      <span class="cat">Follow Collin</span>
+      <div class="listen">
+{%- for l in site.follow %}
+        <a class="ftile" href="{{ l.url }}" target="_blank" rel="noopener"><span class="ft-ic">{% include "icons/" + l.icon + ".svg" %}</span><span class="ft-tx"><span class="ft-n">{{ l.name }}</span><span class="ft-d">{{ l.desc }}</span></span><span class="ft-ar" aria-hidden="true">&nearr;</span></a>
+{%- endfor %}
+        <a class="ftile" href="work"><span class="ft-ic">{% include "icons/mail.svg" %}</span><span class="ft-tx"><span class="ft-n">Contact</span><span class="ft-d">Gigs, production, press</span></span><span class="ft-ar" aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="mailing" style="border-bottom:none">
+  <div class="wrap">
+    <div class="signup reveal">
+      <div class="signup-copy">
+        <span class="cat">Stay In The Loop</span>
+        <h2 class="signup-h">New songs, first.</h2>
+        <p class="signup-p">Join the list for new releases, videos, and Baltimore show dates &mdash; no spam, just the music.</p>
+      </div>
+      <form class="signup-form" action="https://buttondown.email/api/emails/embed-subscribe/collinwesterlund" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.email/collinwesterlund','popupwindow')">
+        <input class="signup-input" type="email" name="email" placeholder="you@email.com" aria-label="Email address" required>
+        <button class="signup-btn" type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" style="border-bottom:none">
+  <div class="wrap">
+    <div class="cta-inner reveal">
+      <div>
+        <span class="cat">Open For Business</span>
+        <h2 class="cta-h">Let's make something.</h2>
+        <p class="cta-p">Live dates, production for other artists, and press &mdash; out of the Baltimore room.</p>
+      </div>
+      <a class="btn-cta" href="work">Work With Collin <span class="btn-arrow">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+

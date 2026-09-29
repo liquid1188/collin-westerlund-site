@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "outlet": "Patheos",
+      "logo": "/assets/img/logo-patheos.png",
+      "date": "July 2026",
+      "headline": "Collin Westerlund’s Beautiful World",
+      "dek": "A profile of the one-man records: every instrument, every harmony, and the long quiet before “Picture This.”",
+      "url": "https://www.patheos.com/blogs/natureandgrace/2026/07/collin-westerlunds-beautiful-world/",
+      "read": "Read the column"
+    },
+    {
+      "outlet": "Arkansas Democrat-Gazette",
+      "logo": "/assets/img/logo-adg.svg",
+      "date": "April 2023",
+      "headline": "Arkansas House Records has big plans for Bentonville music scene",
+      "dek": "The Democrat-Gazette on the label Collin ran out of his Bentonville house studio.",
+      "url": "https://www.arkansasonline.com/news/2023/apr/02/arkansas-house-records-has-big-plans-for/",
+      "read": "Read the story"
+    }
+  ]
+}

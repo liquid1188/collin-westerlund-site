@@ -1,0 +1,12 @@
+<div class="plat-row">
+{%- if r.spotify %}
+            <a class="plat-btn" href="{{ r.spotify }}" target="_blank" rel="noopener" aria-label="Spotify" title="Spotify">{% include "icons/spotify.svg" %}</a>{% endif %}
+{%- if r.apple %}
+            <a class="plat-btn" href="{{ r.apple }}" target="_blank" rel="noopener" aria-label="Apple Music" title="Apple Music">{% include "icons/apple.svg" %}</a>{% endif %}
+{%- if r.tidal %}
+            <a class="plat-btn" href="{{ r.tidal }}" target="_blank" rel="noopener" aria-label="Tidal" title="Tidal">{% include "icons/tidal.svg" %}</a>{% endif %}
+{%- if r.youtube %}
+            <a class="plat-btn" href="{{ r.youtube }}" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">{% include "icons/youtube.svg" %}</a>{% endif %}
+{%- if r.link and not (r.spotify or r.apple or r.tidal or r.youtube) %}
+            <a class="chip" href="{{ r.link }}" target="_blank" rel="noopener">Listen</a>{% endif %}
+          </div>

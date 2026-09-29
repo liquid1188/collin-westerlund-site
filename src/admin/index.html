@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <title>Site Editor &middot; Collin Westerlund</title>
+</head>
+<body>
+  <!-- Sveltia CMS: a form-based editor. Collin signs in and edits content; he never
+       sees code and cannot change the page layout. Site history: ./history/ -->
+  <script src="https://cdn.jsdelivr.net/npm/@sveltia/cms@0.167.3/dist/sveltia-cms.js" type="module"></script>
+  <script>(function(){function fix(){document.querySelectorAll('link[rel~="icon"]').forEach(function(l){if(!/favicon/.test(l.href))l.remove()})}fix();new MutationObserver(fix).observe(document.head,{childList:true});})()</script>
+</body>
+</html>

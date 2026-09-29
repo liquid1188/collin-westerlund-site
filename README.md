@@ -1,12 +1,10 @@
-# Collin Westerlund — Personal Site
+# Collin Westerlund — collinwesterlundmusic.com
 
-Multipage personal website for Collin Westerlund: songwriter, producer, and founder of Arkansas House Records. Based in Baltimore, MD.
+Eleventy site. Page layouts live in `src/*.njk` and `src/_includes/`; everything Collin edits lives in `src/_data/*.json` and is changed through the editor at `/admin/` (Sveltia CMS). Site history and restore: `/admin/history/`.
 
-## Pages
-- `index.html` — home: hero, about, listen/follow links
-- `music.html` — discography (real cover art + vinyl hover) and music videos
-- `label.html` — Arkansas House Records: mission, roster, house sessions, archived-site note
-- `photos.html` — film photography contact sheet
-- `notebook.html` — blog/vlog hybrid: short entries with embedded videos
+- `src/_data/releases.json` — releases; newest is featured on the home page
+- `src/_data/notebook.json` — Notebook posts
+- `src/_data/press.json`, `photos.json`, `videos.json`, `site.json`
+- `src/root/` — files copied as-is to the site root (CNAME, favicons, press kit, redirects)
 
-Static HTML + one shared stylesheet (`assets/style.css`). No build step — deployable to any static host.
+Build: `npm ci && npx @11ty/eleventy` → `_site/`. Deploys through GitHub Actions on every push to main.
