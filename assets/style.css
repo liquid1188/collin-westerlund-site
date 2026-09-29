@@ -40,7 +40,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
 /* ===== nav ===== */
 nav{
   position:sticky;top:0;z-index:100;
-  background:rgba(22,17,13,.92);backdrop-filter:blur(8px);
+  background:var(--ink);
+  padding-top:env(safe-area-inset-top,0px);
   border-bottom:1px solid var(--hairline);
 }
 nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:58px}
@@ -679,7 +680,7 @@ nav.scrolled{box-shadow:0 6px 24px rgba(0,0,0,.4)}
 .entry .frame{margin-top:1.2rem}
 
 /* ===== listen band (shuffle player) ===== */
-#listen-band{position:fixed;left:0;right:0;bottom:0;z-index:70;background:rgba(20,20,20,.97);backdrop-filter:blur(8px);border-top:1px solid rgba(222,216,205,.16);transform:translateY(0)}
+#listen-band{position:fixed;left:0;right:0;bottom:0;z-index:70;background:rgba(20,20,20,.97);padding-bottom:env(safe-area-inset-bottom,0px);backdrop-filter:blur(8px);border-top:1px solid rgba(222,216,205,.16);transform:translateY(0)}
 #listen-band .lb-wrap{max-width:1120px;margin:0 auto;padding:10px 24px;display:flex;align-items:center;gap:16px}
 .lb-play{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;flex-shrink:0;border:1.5px solid var(--amber);border-radius:999px;background:transparent;color:var(--amber);cursor:pointer;transition:background .2s,color .2s,transform .15s}
 .lb-play:hover{background:var(--amber);color:#16110d;transform:scale(1.05)}
