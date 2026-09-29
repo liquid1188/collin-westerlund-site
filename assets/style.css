@@ -860,3 +860,20 @@ a.plogo:hover .pc-head{color:var(--amber)}
 @media(max-width:760px){nav ul,nav ul.open{gap:0}}
 /* --- phones: the nav already carries the Work CTA and the player owns the bottom edge --- */
 @media(max-width:760px){#work-pill{display:none}}
+
+/* --- follow tiles: icon, name, and what you get there --- */
+.follow .listen{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.ftile{display:flex;align-items:center;gap:16px;padding:18px 20px;border:1px solid var(--hairline);border-radius:10px;
+  background:linear-gradient(160deg,rgba(239,230,214,.03),transparent 60%);color:var(--paper);text-decoration:none;
+  transition:border-color .2s,transform .2s,background .2s}
+.ftile:hover{border-color:var(--amber);transform:translateY(-2px);text-decoration:none;color:var(--paper);background:rgba(186,116,64,.06)}
+.ft-ic{flex-shrink:0;display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:999px;border:1.5px solid rgba(222,216,205,.28);color:var(--paper);transition:background .2s,color .2s,border-color .2s}
+.ft-ic svg{width:20px;height:20px;fill:currentColor;display:block}
+.ftile:hover .ft-ic{background:var(--amber);border-color:var(--amber);color:#141414}
+.ft-tx{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1}
+.ft-n{font-family:'Big Shoulders Display',sans-serif;font-weight:700;text-transform:uppercase;font-size:1.15rem;letter-spacing:.05em;line-height:1}
+.ft-d{font-size:.92rem;color:var(--paper-dim);line-height:1.35}
+.ft-ar{color:var(--paper-dim);font-size:.9rem;transition:color .2s,transform .2s}
+.ftile:hover .ft-ar{color:var(--amber);transform:translate(2px,-2px)}
+@media(max-width:900px){.follow .listen{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.follow .listen{grid-template-columns:1fr;gap:10px}.ftile{padding:14px 16px}}
